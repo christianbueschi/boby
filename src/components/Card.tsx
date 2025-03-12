@@ -14,10 +14,11 @@ import {
 
 type CardProps = {
   card: CardType;
-  collectionId: string;
+  collectionId?: string;
+  small?: boolean;
 };
 
-export const Card: React.FC<CardProps> = ({ card, collectionId }) => {
+export const Card: React.FC<CardProps> = ({ card, collectionId, small }) => {
   const { removeCard } = useCollections();
 
   return (
@@ -37,36 +38,38 @@ export const Card: React.FC<CardProps> = ({ card, collectionId }) => {
         <VStack
           alignItems='initial'
           justifyContent='center'
-          h='80px'
+          h={small ? '40px' : '80px'}
           bg='gray.700'
           p={4}
-          borderRadius='md'
+          borderRadius={small ? 'md' : 'xl'}
         >
           <HStack>
             <Image
               src={card.favIconUrl}
               alt={card.title}
-              width={8}
-              height={8}
+              width={small ? 4 : 8}
+              height={small ? 4 : 8}
             />
 
-            <Heading size='sm' lineClamp={2}>
+            <Heading size='sm' lineClamp={small ? 1 : 2}>
               {card.title}
             </Heading>
           </HStack>
         </VStack>
       </a>
-      <IconButton
-        display='none'
-        size='2xs'
-        variant='ghost'
-        onClick={() => removeCard(card.id, collectionId)}
-        position='absolute'
-        top={1}
-        right={1}
-      >
-        <PiTrashLight />
-      </IconButton>
+      {collectionId && (
+        <IconButton
+          display='none'
+          size='2xs'
+          variant='ghost'
+          onClick={() => removeCard(card.id, collectionId)}
+          position='absolute'
+          top={1}
+          right={1}
+        >
+          <PiTrashLight />
+        </IconButton>
+      )}
     </Box>
   );
 };

@@ -64,7 +64,7 @@ export const DroppableCollection: React.FC<DroppableCollectionProps> = ({
         </AbsoluteCenter>
       </Box>
 
-      <Accordion.ItemContent>
+      <Accordion.ItemContent overflow='visible'>
         <Accordion.ItemBody>
           {/* <DroppableCollection key={id} id={id} cards={cards} /> */}
           <VStack alignItems='initial' gap={4}>

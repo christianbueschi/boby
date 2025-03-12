@@ -1,8 +1,9 @@
 import { useDraggable } from '@dnd-kit/core';
-import { Card } from '../context/CollectionsContext';
+import { Card as CardType } from '../context/CollectionsContext';
 import { Box } from '@chakra-ui/react';
+import { Card } from './Card';
 
-export const DraggableCard = ({ card }: { card: Card }) => {
+export const DraggableCard = ({ card }: { card: CardType }) => {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
     id: card.id,
   });
@@ -12,15 +13,12 @@ export const DraggableCard = ({ card }: { card: Card }) => {
       ref={setNodeRef}
       {...listeners}
       {...attributes}
-      padding='10px'
-      margin='5px'
-      border='1px solid black'
       cursor='grab'
       transform={
         transform ? `translate(${transform.x}px, ${transform.y}px)` : undefined
       }
     >
-      {card.title}
+      <Card card={card} small />
     </Box>
   );
 };
