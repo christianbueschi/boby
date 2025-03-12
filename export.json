@@ -1,0 +1,773 @@
+{
+  "version": 3,
+  "lists": [
+    {
+      "title": "Neurolite",
+      "cards": [
+        {
+          "title": "(1) Anforderungen",
+          "url": "https://www.notion.so/Anforderungen-14bd77ee69eb806f84ace85d1e1953a9",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Flow Frontend Webshop – Figma",
+          "url": "https://www.figma.com/design/ryf1BvljzIA73qVgNHOKhx/Flow-Frontend-Webshop?node-id=1-3&t=Ep5IbnV4mHUMIYqV-0",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Medication-free depression treatment - Flow Neuroscience",
+          "url": "https://www.flowneuroscience.ch/",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Quick Start Guide | Store API",
+          "url": "https://shopware.stoplight.io/docs/store-api/38777d33d92dc-quick-start-guide",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "shopwareLabs/nextjs-shopware-starter: Shopware + Next.js Commerce",
+          "url": "https://github.com/shopwareLabs/nextjs-shopware-starter",
+          "customTitle": "",
+          "customDescription": ""
+        }
+      ],
+      "labels": []
+    },
+    {
+      "title": "Bielti",
+      "cards": [
+        {
+          "title": "myBKW: Übersicht",
+          "url": "https://my.bkw.ch/overview",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Plant Status - SEMS",
+          "url": "https://www.semsportal.com/PowerStation/PowerStatusSnMin/a91755e6-52a7-4dbf-afce-da652435c4c9",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Solar Manager",
+          "url": "https://web.solar-manager.ch/dashboard/",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "RE550",
+          "url": "http://192.168.8.119/#networkMap",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "HUAWEI 5G CPE Pro 2",
+          "url": "http://192.168.8.1/html/content.html#home",
+          "customTitle": "",
+          "customDescription": ""
+        }
+      ],
+      "labels": []
+    },
+    {
+      "title": "KI",
+      "cards": [
+        {
+          "title": "(3) Discord | #general | christian's midjourny",
+          "url": "https://discord.com/channels/1232257510757503028/1232257510757503031",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Midjourney Prompt Generator: Helps You Build The Perfect Prompt!",
+          "url": "https://promptfolder.com/midjourney-prompt-helper/",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "How to Use Midjourney: A Comprehensive Guide to AI-Generated Artwork Creation | DataCamp",
+          "url": "https://www.datacamp.com/tutorial/how-to-use-midjourney-a-comprehensive-guide-to-ai-generated-artwork-creation",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "How to get a perfect face swap using Midjourney AI | ZDNET",
+          "url": "https://www.zdnet.com/article/how-to-get-a-perfect-face-match-using-midjourney-ai/",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Clipdrop: Remove the background of images for free with incredible accuracy",
+          "url": "https://clipdrop.co/remove-background",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "My Images",
+          "url": "https://www.midjourney.com/imagine",
+          "customTitle": "",
+          "customDescription": ""
+        }
+      ],
+      "labels": []
+    },
+    {
+      "title": "Plattform",
+      "cards": [
+        {
+          "title": "CoworkingHaslital - Dropbox",
+          "url": "https://www.dropbox.com/home/CoworkingHaslital",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "PlattformHaslital – Dropbox Paper",
+          "url": "https://paper.dropbox.com/folder/show/PlattformHaslital-e.iX7ZavGxujPFwhjOZcQs9unDy17MpUKd5Uby6ae3f6VpyGMU9p",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "AbaNinja - Plattform Haslital",
+          "url": "https://app.abaninja.ch/dashboard?app_instance_uuid=98cb8cc3-e763-4fb4-a6a7-cd8e87864779",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Roundcube Webmail :: Posteingang",
+          "url": "https://webmail.plattformhaslital.ch/?_task=mail&_mbox=INBOX",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Reservations ‹ Plattform Haslital — WordPress",
+          "url": "https://www.plattformhaslital.ch/wp-admin/admin.php?page=dopbsp-reservations",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "20200820_Mitglieder Genossenschaft Plattform Haslital.xlsx",
+          "url": "https://www.dropbox.com/scl/fi/iqmx2ad84atszax19zz7i/20200820_Mitglieder-Genossenschaft-Plattform-Haslital.xlsx?rlkey=lhb83lg42opkyvs7fzf6557nj&dl=0",
+          "customTitle": "Mitglieder Genossenschaft Plattform Haslital.xlsx",
+          "customDescription": "20200820_Mitglieder Genossenschaft Plattform Haslital.xlsx"
+        }
+      ],
+      "labels": []
+    },
+    {
+      "title": "Coalist",
+      "cards": [
+        {
+          "title": "Coalist",
+          "url": "https://hub.coalist.ch/login",
+          "customTitle": "Hub",
+          "customDescription": "Coalist"
+        }
+      ],
+      "labels": []
+    },
+    {
+      "title": "Crowdinsider",
+      "cards": [
+        {
+          "title": "Google Cloud console",
+          "url": "https://console.cloud.google.com/run?authuser=1&project=sbc-analytics-383611",
+          "customTitle": "Cloud Run",
+          "customDescription": "Google Cloud console"
+        },
+        {
+          "title": "Metrics – backend – Cloud Run – sbc-analytics – Google Cloud console",
+          "url": "https://console.cloud.google.com/sql/instances?authuser=1&project=sbc-analytics-383611",
+          "customTitle": "SQL",
+          "customDescription": " "
+        },
+        {
+          "title": "Buckets – Cloud Storage – sbc-analytics – Google Cloud console",
+          "url": "https://console.cloud.google.com/storage/browser?authuser=1&project=sbc-analytics-383611&prefix=&forceOnBucketsSortingFiltering=true",
+          "customTitle": "Storage",
+          "customDescription": " "
+        },
+        {
+          "title": "Actions · christianbueschi/sbc",
+          "url": "https://github.com/christianbueschi/sbc/actions",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "SBC Analytics Dashboard",
+          "url": "https://frontend-ek5xpiq3kq-oa.a.run.app/",
+          "customTitle": "FE",
+          "customDescription": "SBC Analytics Dashboard"
+        },
+        {
+          "title": "https://backend-ek5xpiq3kq-oa.a.run.app/graphql",
+          "url": "https://backend-ek5xpiq3kq-oa.a.run.app/graphql",
+          "customTitle": "BE",
+          "customDescription": "https://backend-ek5xpiq3kq-oa.a.run.app/graphql"
+        },
+        {
+          "title": "● SBC Analytics Dashboard - Asana",
+          "url": "https://app.asana.com/0/1204434187679912/board",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "FastAPI - Swagger UI",
+          "url": "https://datascope.sbcdc.ch/docs#/",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Issues — sbc-oy — Sentry",
+          "url": "https://sbc-oy.sentry.io/issues/?project=4505482385752064&referrer=sidebar",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "sbc-analyt…-balancer – Load balancer details – Network services – sbc-analytics – Google Cloud console",
+          "url": "https://console.cloud.google.com/net-services/loadbalancing/details/http/sbc-analytics-load-balancer?project=sbc-analytics-383611&authuser=2",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "crowdinsider.ch",
+          "url": "https://crowdinsider.ch/",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "dev.crowdinsider.ch",
+          "url": "https://dev.crowdinsider.ch/",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Activity - MailerSend",
+          "url": "https://app.mailersend.com/activity?start_date=2023-11-25&end_date=2023-12-01&limit=25&to=25&from=1&all=true",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Usage - OpenAI API",
+          "url": "https://platform.openai.com/usage",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Visual Crossing Weather Data Usage Information | Visual Crossing",
+          "url": "https://www.visualcrossing.com/usage",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Resources - All the basics",
+          "url": "https://sdx.swisscom.com/resources.html",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "crowdinsider · GitLab",
+          "url": "https://code.swisscom.com/swisscom/sbcdevops/sbc/crowdinsider",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "NetScaler AAA",
+          "url": "https://twp.swisscom.com/logon/LogonPoint/tmindex.html",
+          "customTitle": "TWP Swisscom",
+          "customDescription": "NetScaler AAA"
+        },
+        {
+          "title": "crowdinsider.8101.sbcdc.ch/de",
+          "url": "https://crowdinsider.8101.sbcdc.ch/de",
+          "customTitle": "",
+          "customDescription": ""
+        }
+      ],
+      "labels": []
+    },
+    {
+      "title": "sonepar",
+      "cards": [
+        {
+          "title": "Dev Board Akona - Agile Board - JIRA",
+          "url": "https://sonepar-suisse.atlassian.net/jira/software/c/projects/WF/boards/10?quickFilter=82",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Getting started - Akona - Confluence",
+          "url": "https://sonepar-suisse.atlassian.net/wiki/spaces/WF/pages/98533438/Getting+started#Gettingstarted-SoneparSuisse",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Test-Kundennummern - Akona - Confluence",
+          "url": "https://sonepar-suisse.atlassian.net/wiki/spaces/WF/pages/364838914/Test-Kundennummern",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Zugangsdaten & System-URL's - Akona - Confluence",
+          "url": "https://sonepar-suisse.atlassian.net/wiki/spaces/WF/pages/3604620/Zugangsdaten+System-URL+s",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "winterhalter-fenner/akona: Webshop",
+          "url": "https://github.com/winterhalter-fenner/akona",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Translate from German, Switzerland to Italian, Switzerland · Sonepar Suisse AG/Akona · WebTranslateIt",
+          "url": "https://webtranslateit.com/projects/18738-akona/locales/de-CH..it-CH/strings?regex=false&ignore_case=true&object=&s=noValidCommentLabelError&current_id=22462933",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Sonepar Suisse - Kabel TT 3×1.5mm² LNPE grau Eca",
+          "url": "http://www.so.akona.local/de/106010323-kabel-tt-3x15mm2-lnpe-grau-eca-505456",
+          "customTitle": "Sonepar Local",
+          "customDescription": "Sonepar Suisse - Kabel TT 3×1.5mm² LNPE grau Eca"
+        },
+        {
+          "title": "Sonepar Suisse - Online Shop für Elektrohandwerk und Industrie",
+          "url": "https://so-dev.wfhosting.ch/de",
+          "customTitle": "Sonepar dev",
+          "customDescription": "Sonepar Suisse - Online Shop für Elektrohandwerk und Industrie"
+        },
+        {
+          "title": "Sonepar Suisse - Online Shop für Elektrohandwerk und Industrie",
+          "url": "https://so-stage.wfhosting.ch/de",
+          "customTitle": "Sonepar Stage",
+          "customDescription": "Sonepar Suisse - Online Shop für Elektrohandwerk und Industrie"
+        },
+        {
+          "title": "Sonepar Suisse - Online Shop für Elektrohandwerk und Industrie",
+          "url": "https://so-dev.wfhosting.ch/de",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "WF | Zed | Development",
+          "url": "http://zed.so.akona.local/security-gui/login",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "spryker.local",
+          "url": "http://spryker.local/",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Issues - winterhalter-fenner-ag - Sentry",
+          "url": "https://winterhalter-fenner-ag.sentry.io/issues/?project=1327784&referrer=sidebar",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Analytics | Startseite",
+          "url": "https://analytics.google.com/analytics/web/?authuser=1#/p265379509/reports/intelligenthome",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Swagger UI",
+          "url": "http://swagger.spryker.local/",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Sonepar Suisse - Winkel/T-Stücke",
+          "url": "http://www.so.akona.local/de/2792-leitungsfuehrungen/3020-stangenrohre/3091-zubehoer-fuer-kir-rohre/4242-winkelt-stuecke",
+          "customTitle": "Green Class",
+          "customDescription": "Sonepar Suisse - Winkel/T-Stücke"
+        },
+        {
+          "title": "Sulu",
+          "url": "https://shop-stage-su01.wfhosting.ch/admin/#/contacts/522/permissions",
+          "customTitle": "Sulu Stage",
+          "customDescription": "Sulu"
+        },
+        {
+          "title": "Dashboard [Jenkins]",
+          "url": "http://infra-build01.wfhosting.ch:8080/",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "WF | Zed | Stage",
+          "url": "https://shop-stage-z01.wfhosting.ch/security-gui/login",
+          "customTitle": "Spryker Stage",
+          "customDescription": "WF | Zed | Stage"
+        },
+        {
+          "title": "Material Design Icons – Figma",
+          "url": "https://www.figma.com/design/Z7xA9TgCtt5l2XQNFaOwj0/Material-Design-Icons?node-id=2403-4348&node-type=frame&t=h2Bsok3z4jrE3X1E-0",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Auftragshistorie – Figma",
+          "url": "https://www.figma.com/design/RNcy2oegBXgY5sgB25ppIi/Auftragshistorie?node-id=578-8329&node-type=frame&t=MBGlnHaZtbPxG93v-0",
+          "customTitle": "",
+          "customDescription": ""
+        }
+      ],
+      "labels": []
+    },
+    {
+      "title": "Cardy",
+      "cards": [
+        {
+          "title": "Cardy | Trello",
+          "url": "https://trello.com/b/f0qMjlhu/cardy",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "christianbueschi/cardy",
+          "url": "https://github.com/christianbueschi/cardy",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "cardy-api - DigitalOcean App Platform",
+          "url": "https://cloud.digitalocean.com/apps/f2539d69-07f7-495a-af35-cd039b8c3ad2/overview",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Hostpoint Control Panel - DNS Zone bearbeiten | Christian Huber",
+          "url": "https://admin.hostpoint.ch/customer/Domains/Dns/Edit?name=cardy.ch",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Naptive - Cardy - All Documents",
+          "url": "https://naptive.sharepoint.com/sites/Naptive/Freigegebene%20Dokumente/Forms/AllItems.aspx?id=%2Fsites%2FNaptive%2FFreigegebene%20Dokumente%2FCardy&p=true&ga=1",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "User Activity - Amplitude",
+          "url": "https://analytics.amplitude.com/enabl-gmbh/activity",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Projects Dashboard - enabl - Sentry",
+          "url": "https://sentry.io/organizations/enabl/projects/",
+          "customTitle": "Sentry",
+          "customDescription": "Projects Dashboard - enabl - Sentry"
+        },
+        {
+          "title": "https://staff.cardy.ch/loewen-tuggen-NUdqTcNEgE/locations/gasthaus-löwen-YjeW20AI9L",
+          "url": "https://staff.cardy.ch/loewen-tuggen-NUdqTcNEgE/locations/gasthaus-l%C3%B6wen-YjeW20AI9L",
+          "customTitle": "Staff Cardy Hotel Löwen",
+          "customDescription": "https://staff.cardy.ch/loewen-tuggen-NUdqTcNEgE/locations/gasthaus-löwen-YjeW20AI9L"
+        },
+        {
+          "title": "Sharing Link Validation",
+          "url": "https://naptive.sharepoint.com/:f:/s/Naptive/EvWsivT9LRZEjq4xu0_c_NMBTSkKnLwQ1LlioXNqMPiqAA?email=christianbueschi%40gmail.com&e=5%3aoAme6Y&at=9",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Manager",
+          "url": "https://manager.xenia-pos.net/login",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "app.k6.io - Performance testing for developers, like unit-testing, for performance",
+          "url": "https://app.k6.io/runs/1476714/summary",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Dashboard – Vercel",
+          "url": "https://vercel.com/cardy",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "cardy's Live status - Powered by Freshping",
+          "url": "https://statuspage.freshping.io/62869-cardy",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "staff.cardy.ch/loewen-tuggen-NUdqTcNEgE/locations/gasthaus-löwen-YjeW20AI9L/orders",
+          "url": "https://staff.cardy.ch/loewen-tuggen-NUdqTcNEgE/locations/gasthaus-l%C3%B6wen-YjeW20AI9L/orders",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Freshping",
+          "url": "https://christianbueschi.freshping.io/settings/integrations",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "myPortal",
+          "url": "https://myportal.six-payment-services.com/merchantportal/#/company",
+          "customTitle": "",
+          "customDescription": ""
+        }
+      ],
+      "labels": []
+    },
+    {
+      "title": "enabl",
+      "cards": [
+        {
+          "title": "Banking | bexio",
+          "url": "https://office.bexio.com/index.php/bank_account/list",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Admin-Konsole",
+          "url": "https://admin.google.com/u/1/ac/home",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "enabl – Overview – Vercel",
+          "url": "https://vercel.com/christianbueschi/enabl",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "DNS-Verwaltung | my.metanet.ch",
+          "url": "https://my.metanet.ch/de/dnse_domain.html?domain=enabl.ch&activate&csrftoken=v9HI4kIrw7etoC7PFDo8xROkSiUtCoznAOWK0vB%2B8KA%3D",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Meine Ablage – Google Drive",
+          "url": "https://drive.google.com/drive/u/1/my-drive",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Creating a CI/CD environment for serverless containers on Cloud Run with GitHub Actions  |  Google Cloud Platform Community",
+          "url": "https://cloud.google.com/community/tutorials/cicd-cloud-run-github-actions",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Willkommen – enabl-stack – Google Cloud Console",
+          "url": "https://console.cloud.google.com/run?authuser=1&project=enabl-stack-377415",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Raiffeisen Login",
+          "url": "https://login.raiffeisen.ch/de?Location=https%3A%2F%2Febanking.raiffeisen.ch%2Fapp%2F&applicationId=ebanking",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Funnel* - Amplitude",
+          "url": "https://app.amplitude.com/analytics/enabl-gmbh/chart/esl8lwh5/edit/xiamfyss",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Kampagnen | enabl Ad Account | LinkedIn Campaign Manager",
+          "url": "https://www.linkedin.com/campaignmanager/accounts/512464898/campaigns?campaignGroupIds=%5B670451034%5D",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Billing history - OpenAI API",
+          "url": "https://platform.openai.com/settings/organization/billing/history",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Firebase Payment – Documents – Billing – sbc-analytics – Google Cloud console",
+          "url": "https://console.cloud.google.com/billing/01E5C9-83C052-87AA34/invoices?authuser=1&organizationId=487567634688&project=sbc-analytics-383611",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Payment account - Admin Console",
+          "url": "https://admin.google.com/u/1/ac/billing/accounts/N6bMixvB1EHEWBE-ZHZKN9hkVrUI85HR",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "SuperMaven, Inc. Billing",
+          "url": "https://billing.stripe.com/p/session/live_YWNjdF8xTnhEQjZJQndOUVQzZk1lLF9RUEF2QmRnSlBOSzVoUmtSVkx3N2VkZmltOGNzZDhM0100icTMv25v",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "OpenAI, LLC Billing",
+          "url": "https://pay.openai.com/p/session/live_YWNjdF8xSE9yU3dDNmgxbnhHb0kzLF9RZUJUUkprM2dLZGEwRm5sSUZkYUJVV1NtZ0xIMm1Z01005b5XgTe5",
+          "customTitle": "",
+          "customDescription": ""
+        }
+      ],
+      "labels": []
+    },
+    {
+      "title": "Billing",
+      "cards": [
+        {
+          "title": "Transactions - Admin Console",
+          "url": "https://admin.google.com/u/1/ac/billing/accounts/N6bMixvB1EHEWBE-ZHZKN9hkVrUI85HR/transactions",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Billing information - MailerSend",
+          "url": "https://app.mailersend.com/billing/info",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "SuperMaven, Inc. Billing",
+          "url": "https://billing.stripe.com/p/session/live_YWNjdF8xTnhEQjZJQndOUVQzZk1lLF9RcUVUcHdtQUpNNDMzMHF5TWtNUG9CVlR3UHF0ZkRB0100pSuGNgtV",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "christianbueschi's Org | Supabase",
+          "url": "https://supabase.com/dashboard/org/vejszyaimslodgtgmgax/invoices",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Firebase Payment – Documents – Billing – sbc-analytics – Google Cloud console",
+          "url": "https://console.cloud.google.com/billing/01E5C9-83C052-87AA34/invoices?authuser=1&organizationId=487567634688&project=sbc-analytics-383611",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Visual Crossing Corporation Billing",
+          "url": "https://billing.stripe.com/p/session/live_YWNjdF8xQ2NZSGlCcjZnZk95ZDRNLF9RcUVudDhQY0ZRblUzcXdmOVUzNUhBcnRRV2IzTXQx0100JAYf8G2p",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "OpenAI, LLC Billing",
+          "url": "https://pay.openai.com/p/session/live_YWNjdF8xSE9yU3dDNmgxbnhHb0kzLF9RcUVyaEM5NVVxNGlScWVCVVZsWWJOYjE3dmJiWHJh0100iVMrM1Cr",
+          "customTitle": "",
+          "customDescription": ""
+        }
+      ],
+      "labels": []
+    },
+    {
+      "title": "landgasthof-taennler.ch",
+      "cards": [
+        {
+          "title": "https://landgasthof-taennler.ch",
+          "url": "https://landgasthof-taennler.ch/",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Dashboard ‹ Landgasthof Tännler — WordPress",
+          "url": "https://landgasthof-taennler.ch/wp-admin/",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "E-Mail – Info – Outlook",
+          "url": "https://outlook.office.com/mail/",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Microsoft 365 admin center - Start",
+          "url": "https://admin.microsoft.com/AdminPortal/Home?#/homepage",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Exchange admin center",
+          "url": "https://admin.exchange.microsoft.com/#/homepage",
+          "customTitle": "",
+          "customDescription": ""
+        }
+      ],
+      "labels": []
+    },
+    {
+      "title": "POOMA",
+      "cards": [
+        {
+          "title": "POOMA – Übersicht – Firebase console",
+          "url": "https://console.firebase.google.com/project/scrum-poker-98227/overview?hl=de",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "pooma – Overview – Vercel",
+          "url": "https://vercel.com/christianbueschi/pooma",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Private Email | Inbox",
+          "url": "https://privateemail.com/appsuite/#!!&app=io.ox/mail&folder=default0/INBOX",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Domain",
+          "url": "https://ap.www.namecheap.com/Domains/DomainControlPanel/pooma.app/domain/",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Analytics | Echtzeitbericht – Übersicht",
+          "url": "https://analytics.google.com/analytics/web/#/p166889185/realtime/overview?params=_u..nav%3Dmaui",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Can Vercel sponsor my open source project? – Vercel Docs",
+          "url": "https://vercel.com/guides/can-vercel-sponsor-my-open-source-project",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Open Source Sponsorships - One Pager - Google Docs",
+          "url": "https://docs.google.com/document/d/1P1ZqpxgKtiNibtWs53dLeCBmfp47Nqi6QlRg74lbsAc/edit",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "Data | Cloud: MongoDB Cloud",
+          "url": "https://cloud.mongodb.com/v2/626a94eba29ff238b0d77889#metrics/replicaSet/638090ea770ebe6f48d4fb8b/explorer",
+          "customTitle": "",
+          "customDescription": ""
+        },
+        {
+          "title": "pooma | Supabase",
+          "url": "https://app.supabase.com/project/ttzjopnzawgtbycammfa",
+          "customTitle": "Supabase | prod",
+          "customDescription": "pooma | Supabase"
+        },
+        {
+          "title": "Supabase | Supabase",
+          "url": "http://localhost:54323/projects",
+          "customTitle": "Supabase | Local",
+          "customDescription": "Supabase | Supabase"
+        }
+      ],
+      "labels": []
+    }
+  ]
+}
