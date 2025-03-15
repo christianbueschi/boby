@@ -4,10 +4,17 @@ import { generateUUID } from '../utils/uuid';
 export type Collection = {
   id: string;
   name: string;
-  cards: Card[];
+  cards: CardType[];
 };
 
-export type Card = {
+export type CardType = {
+  id: string;
+  title: string;
+  url: string;
+  favicon?: string;
+};
+
+export type TabType = {
   id: number;
   title: string;
   url: string;
@@ -16,12 +23,12 @@ export type Card = {
 
 type CollectionsContextType = {
   collections: Collection[];
-  tabs: Card[];
+  tabs: TabType[];
   openCollections: string[];
   addCollection: (name: string) => void;
   removeCollection: (collectionName: string) => void;
   saveCollections: (collections: Collection[]) => void;
-  removeCard: (cardId: number, collectionId: string) => void;
+  removeCard: (cardId: string, collectionId: string) => void;
   saveOpenCollections: (openCollections: string[]) => void;
   exportCollections: () => void;
   importCollections: () => void;
@@ -51,13 +58,13 @@ export const CollectionsProvider: React.FC<CollectionsProviderProps> = ({
   children,
 }) => {
   const [collections, setCollections] = useState<Collection[]>([]);
-  const [tabs, setTabs] = useState<Card[]>([]);
+  const [tabs, setTabs] = useState<TabType[]>([]);
 
   const [openCollections, setOpenCollections] = useState<string[]>([]);
 
   useEffect(() => {
-    chrome.tabs.query({}, (openCards) => {
-      const formattedTabs = openCards.map((tab) => ({
+    chrome.tabs.query({}, (openTabs) => {
+      const formattedTabs = openTabs.map((tab) => ({
         id: tab.id!,
         title: tab.title || 'No Title',
         url: tab.url || 'No URL',
@@ -92,7 +99,7 @@ export const CollectionsProvider: React.FC<CollectionsProviderProps> = ({
     saveCollections(newCollections);
   };
 
-  const removeCard = (cardId: number, collectionId: string) => {
+  const removeCard = (cardId: string, collectionId: string) => {
     const newCollections = collections.map((collection) =>
       collection.id === collectionId
         ? {

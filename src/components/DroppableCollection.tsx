@@ -1,20 +1,20 @@
 import {
-  AbsoluteCenter,
   Accordion,
-  Box,
   Heading,
+  HStack,
   IconButton,
   SimpleGrid,
   VStack,
 } from '@chakra-ui/react';
 import { useDroppable } from '@dnd-kit/core';
-import {
-  Card as CardType,
-  useCollections,
-} from '../context/CollectionsContext';
-import { Card } from './Card';
+import { CardType, useCollections } from '../context/CollectionsContext';
 import { PiTrashLight } from 'react-icons/pi';
 import React from 'react';
+import { DraggableCard } from './DraggableCard';
+import {
+  SortableContext,
+  verticalListSortingStrategy,
+} from '@dnd-kit/sortable';
 
 type DroppableCollectionProps = {
   name: string;
@@ -40,7 +40,7 @@ export const DroppableCollection: React.FC<DroppableCollectionProps> = ({
       value={id}
       ref={setNodeRef}
       _hover={{
-        '& > div > div > .chakra-button': {
+        '& > div > .chakra-button': {
           display: 'flex',
         },
       }}
@@ -48,31 +48,35 @@ export const DroppableCollection: React.FC<DroppableCollectionProps> = ({
       outline={isDragOver ? '2px solid' : ''}
       outlineColor={isDragOver ? 'purple.500' : ''}
     >
-      <Box position='relative'>
-        <Accordion.ItemTrigger>
+      <HStack justifyContent='space-between' alignItems='center'>
+        <Accordion.ItemTrigger w='auto'>
           <Heading color='gray.100'>{name}</Heading>
           <Accordion.ItemIndicator />
         </Accordion.ItemTrigger>
-        <AbsoluteCenter axis='vertical' insetEnd='0'>
-          <IconButton
-            size='2xs'
-            onClick={() => removeCollection(id)}
-            display='none'
-          >
-            <PiTrashLight />
-          </IconButton>
-        </AbsoluteCenter>
-      </Box>
+
+        <IconButton
+          size='2xs'
+          onClick={() => removeCollection(id)}
+          display='none'
+          variant='ghost'
+        >
+          <PiTrashLight />
+        </IconButton>
+      </HStack>
 
       <Accordion.ItemContent overflow='visible'>
         <Accordion.ItemBody>
-          {/* <DroppableCollection key={id} id={id} cards={cards} /> */}
           <VStack alignItems='initial' gap={4}>
-            <SimpleGrid columns={{ base: 2, md: 4 }} gap={4}>
-              {cards?.map((card) => (
-                <Card key={card.id} card={card} collectionId={id} />
-              ))}
-            </SimpleGrid>
+            <SortableContext
+              items={cards.map((c) => c.id)}
+              strategy={verticalListSortingStrategy}
+            >
+              <SimpleGrid columns={{ base: 2, md: 4 }} gap={4}>
+                {cards?.map((card) => (
+                  <DraggableCard key={card.id} card={card} collectionId={id} />
+                ))}
+              </SimpleGrid>
+            </SortableContext>
           </VStack>
         </Accordion.ItemBody>
       </Accordion.ItemContent>

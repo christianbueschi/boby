@@ -20,7 +20,7 @@ export const AddCollection: React.FC = () => {
   return (
     <Dialog.Root open={open} onOpenChange={() => setOpen(!open)}>
       <Dialog.Trigger asChild>
-        <Button variant='outline'>+ Add Collection</Button>
+        <Button variant='ghost'>+ Add Collection</Button>
       </Dialog.Trigger>
       <Portal>
         <Dialog.Backdrop />

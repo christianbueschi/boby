@@ -2,6 +2,7 @@ import { createSystem, defaultConfig, defineConfig } from '@chakra-ui/react';
 import '@fontsource/inter/400.css'; // Regular
 import '@fontsource/inter/700.css'; // Bold (or other weights)
 import { colors } from './colors';
+import { buttonRecipe } from './componentStyles/button.recipe';
 
 const config = defineConfig({
   globalCss: {
@@ -25,6 +26,9 @@ const config = defineConfig({
         body: { value: 'Inter, sans-serif' },
       },
       colors,
+    },
+    recipes: {
+      button: buttonRecipe,
     },
   },
 });

@@ -1,75 +1,35 @@
-import {
-  Box,
-  Heading,
-  HStack,
-  IconButton,
-  Image,
-  VStack,
-} from '@chakra-ui/react';
-import { PiTrashLight } from 'react-icons/pi';
-import {
-  Card as CardType,
-  useCollections,
-} from '../context/CollectionsContext';
+import { Heading, HStack, Image, VStack } from '@chakra-ui/react';
 
 type CardProps = {
-  card: CardType;
-  collectionId?: string;
+  favicon?: string;
+  title: string;
   small?: boolean;
 };
 
-export const Card: React.FC<CardProps> = ({ card, collectionId, small }) => {
-  const { removeCard } = useCollections();
-
+export const Card: React.FC<CardProps> = ({ favicon, title, small }) => {
   return (
-    <Box
-      position='relative'
-      transform='scale(1)'
-      transition='transform 0.3s ease-in-out'
-      _hover={{
-        transform: 'scale(1.02)',
-
-        '& button': {
-          display: 'flex',
-        },
-      }}
+    <VStack
+      alignItems='initial'
+      justifyContent='center'
+      h={small ? '40px' : '80px'}
+      bg='gray.700'
+      p={small ? 2 : 4}
+      borderRadius='xl'
     >
-      <a href={card.url} target='_blank' rel='noopener noreferrer'>
-        <VStack
-          alignItems='initial'
-          justifyContent='center'
-          h={small ? '40px' : '80px'}
-          bg='gray.700'
-          p={4}
-          borderRadius={small ? 'md' : 'xl'}
-        >
-          <HStack>
-            <Image
-              src={card.favIconUrl}
-              alt={card.title}
-              width={small ? 4 : 8}
-              height={small ? 4 : 8}
-            />
+      <HStack gap={small ? 2 : 4}>
+        {favicon && (
+          <Image
+            src={favicon}
+            alt={title}
+            width={small ? 4 : 6}
+            height={small ? 4 : 6}
+          />
+        )}
 
-            <Heading size='sm' lineClamp={small ? 1 : 2}>
-              {card.title}
-            </Heading>
-          </HStack>
-        </VStack>
-      </a>
-      {collectionId && (
-        <IconButton
-          display='none'
-          size='2xs'
-          variant='ghost'
-          onClick={() => removeCard(card.id, collectionId)}
-          position='absolute'
-          top={1}
-          right={1}
-        >
-          <PiTrashLight />
-        </IconButton>
-      )}
-    </Box>
+        <Heading size='sm' lineClamp={small ? 1 : 2}>
+          {title}
+        </Heading>
+      </HStack>
+    </VStack>
   );
 };
