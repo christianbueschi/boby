@@ -263,8 +263,10 @@ export default function App() {
                 </Accordion.Root>
               </VStack>
 
-              <VStack flex={1} alignItems='start' bg='gray.900' p={6}>
-                <Heading>Open Tabs</Heading>
+              <VStack flex={1} alignItems='start' bg='gray.900' p={8} gap={8}>
+                <Heading color='gray.400' size='md'>
+                  Open Tabs
+                </Heading>
                 <VStack alignItems='start'>
                   {tabs.map((tab) => (
                     <DraggableTab key={tab.title} tab={tab} />

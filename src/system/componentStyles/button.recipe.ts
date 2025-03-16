@@ -3,7 +3,7 @@ import { defineRecipe } from '@chakra-ui/react';
 const COMMON_VARIANT_PROPS = {
   px: 4,
   borderRadius: 'full',
-  textStyle: 'md',
+  textStyle: 'sm',
 };
 
 export const buttonRecipe = defineRecipe({
@@ -139,7 +139,7 @@ export const buttonRecipe = defineRecipe({
     },
     size: {
       md: {
-        h: { base: 8, md: 11 },
+        h: 8,
       },
     },
   },
