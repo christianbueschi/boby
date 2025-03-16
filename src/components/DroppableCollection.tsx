@@ -8,7 +8,7 @@ import {
 } from '@chakra-ui/react';
 import { useDroppable } from '@dnd-kit/core';
 import { CardType, useCollections } from '../context/CollectionsContext';
-import { PiTrashLight } from 'react-icons/pi';
+import { PiTrashLight, PiArrowsOutCardinal } from 'react-icons/pi';
 import React from 'react';
 import { DraggableCard } from './DraggableCard';
 import {
@@ -21,6 +21,7 @@ type DroppableCollectionProps = {
   id: string;
   cards: CardType[];
   isDragOver: boolean;
+  dragHandleProps?: React.HTMLAttributes<HTMLElement>;
 };
 
 export const DroppableCollection: React.FC<DroppableCollectionProps> = ({
@@ -28,7 +29,9 @@ export const DroppableCollection: React.FC<DroppableCollectionProps> = ({
   id,
   cards,
   isDragOver,
+  dragHandleProps,
 }) => {
+  console.log('🚀 ~ dragHandleProps:', dragHandleProps);
   const { setNodeRef } = useDroppable({
     id,
   });
@@ -40,7 +43,7 @@ export const DroppableCollection: React.FC<DroppableCollectionProps> = ({
       value={id}
       ref={setNodeRef}
       _hover={{
-        '& > div > .chakra-button': {
+        '& .edit-buttons': {
           display: 'flex',
         },
       }}
@@ -54,14 +57,27 @@ export const DroppableCollection: React.FC<DroppableCollectionProps> = ({
           <Accordion.ItemIndicator />
         </Accordion.ItemTrigger>
 
-        <IconButton
-          size='2xs'
-          onClick={() => removeCollection(id)}
-          display='none'
-          variant='ghost'
-        >
-          <PiTrashLight />
-        </IconButton>
+        <HStack display='none' className='edit-buttons'>
+          <IconButton
+            size='2xs'
+            onClick={() => removeCollection(id)}
+            variant='ghost'
+            aria-label='Remove collection'
+          >
+            <PiTrashLight />
+          </IconButton>
+          {dragHandleProps && (
+            <IconButton
+              size='2xs'
+              variant='ghost'
+              cursor='grab'
+              aria-label='Drag collection'
+              {...dragHandleProps}
+            >
+              <PiArrowsOutCardinal />
+            </IconButton>
+          )}
+        </HStack>
       </HStack>
 
       <Accordion.ItemContent overflow='visible'>

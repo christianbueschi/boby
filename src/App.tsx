@@ -14,15 +14,23 @@ import {
   HStack,
   VStack,
 } from '@chakra-ui/react';
-import { DroppableCollection } from './components/DroppableCollection';
 import { DraggableTab } from './components/DraggableTab';
-import { CardType, useCollections } from './context/CollectionsContext';
+import {
+  CardType,
+  Collection,
+  useCollections,
+} from './context/CollectionsContext';
 import { AddCollection } from './components/AddCollection';
 import { Footer } from './components/Footer';
 import { useState } from 'react';
 import { generateUUID } from './utils/uuid';
 import { Card } from './components/Card';
-import { arrayMove } from '@dnd-kit/sortable';
+import {
+  arrayMove,
+  SortableContext,
+  verticalListSortingStrategy,
+} from '@dnd-kit/sortable';
+import { DraggableCollection } from './components/DraggableCollection';
 
 export default function App() {
   const {
@@ -34,18 +42,29 @@ export default function App() {
   } = useCollections();
 
   const [activeCard, setActiveCard] = useState<CardType | null>(null);
+  const [activeCollection, setActiveCollection] = useState<Collection | null>(
+    null
+  );
   const [dragOverId, setDragOverId] = useState<string | null>(null);
 
   const handleDragStart = (event: DragStartEvent) => {
     const { active } = event;
     if (!active) return;
 
+    // Check if the dragged item is a card
     const card = collections
       .flatMap((collection) => collection.cards)
       .find((c) => c.id === active.id);
 
     if (card) {
       setActiveCard(card);
+      return;
+    }
+
+    // Check if the dragged item is a collection
+    const collection = collections.find((c) => c.id === active.id);
+    if (collection) {
+      setActiveCollection(collection);
     }
   };
 
@@ -56,7 +75,9 @@ export default function App() {
     const activeId = active.id;
     const overId = over.id;
 
-    setDragOverId(`${overId}`);
+    if (!activeCollection) {
+      setDragOverId(`${overId}`);
+    }
 
     let sourceCollectionIndex = -1;
     let targetCollectionIndex = -1;
@@ -138,11 +159,31 @@ export default function App() {
     const { active, over } = event;
 
     setDragOverId(null);
+    setActiveCard(null);
+    setActiveCollection(null);
 
     if (!over) return;
 
     const activeId = active.id;
     const overId = over.id;
+
+    // Check if we're reordering collections
+    const activeCollectionIndex = collections.findIndex(
+      (c) => c.id === activeId
+    );
+    const overCollectionIndex = collections.findIndex((c) => c.id === overId);
+
+    if (activeCollectionIndex !== -1 && overCollectionIndex !== -1) {
+      // We're reordering collections
+      const newCollections = arrayMove(
+        collections,
+        activeCollectionIndex,
+        overCollectionIndex
+      );
+
+      saveCollections(newCollections);
+      return;
+    }
 
     // add new tab/card to collection
     const tab = tabs.find((t) => t.id === activeId);
@@ -171,9 +212,6 @@ export default function App() {
       if (!openCollections.includes(`${overId}`)) {
         saveOpenCollections([...openCollections, `${overId}`]);
       }
-
-      setDragOverId(null);
-      setActiveCard(null);
     } else {
       let sourceCollectionIndex = -1;
       let sourceCardIndex = -1;
@@ -251,15 +289,18 @@ export default function App() {
                   onValueChange={(e) => saveOpenCollections(e.value)}
                   multiple
                 >
-                  {collections.map(({ name, id, cards }) => (
-                    <DroppableCollection
-                      name={name}
-                      key={id}
-                      id={id}
-                      cards={cards}
-                      isDragOver={dragOverId === id}
-                    />
-                  ))}
+                  <SortableContext
+                    items={collections.map((c) => c.id)}
+                    strategy={verticalListSortingStrategy}
+                  >
+                    {collections.map((collection) => (
+                      <DraggableCollection
+                        key={collection.id}
+                        collection={collection}
+                        isDragOver={dragOverId === collection.id}
+                      />
+                    ))}
+                  </SortableContext>
                 </Accordion.Root>
               </VStack>
 
@@ -277,6 +318,19 @@ export default function App() {
             <DragOverlay>
               {activeCard ? (
                 <Card title={activeCard.title} favicon={activeCard.favicon} />
+              ) : activeCollection ? (
+                <Box
+                  p={4}
+                  bg='gray.700'
+                  borderRadius='md'
+                  boxShadow='lg'
+                  opacity={0.8}
+                  minWidth='200px'
+                >
+                  <Heading size='md' color='gray.100'>
+                    {activeCollection.name}
+                  </Heading>
+                </Box>
               ) : null}
             </DragOverlay>
           </DndContext>
