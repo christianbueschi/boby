@@ -1,4 +1,10 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 import { generateUUID } from '../utils/uuid';
 
 export type Collection = {
@@ -62,7 +68,7 @@ export const CollectionsProvider: React.FC<CollectionsProviderProps> = ({
 
   const [openCollections, setOpenCollections] = useState<string[]>([]);
 
-  useEffect(() => {
+  const fetchTabs = useCallback(() => {
     chrome.tabs.query({}, (openTabs) => {
       const formattedTabs = openTabs.map((tab) => ({
         id: tab.id!,
@@ -73,6 +79,44 @@ export const CollectionsProvider: React.FC<CollectionsProviderProps> = ({
       setTabs(formattedTabs);
     });
   }, []);
+
+  useEffect(() => {
+    // Initial fetch
+    fetchTabs();
+
+    // Listen for tab creation
+    const handleTabCreated = () => {
+      fetchTabs();
+    };
+
+    // Listen for tab removal
+    const handleTabRemoved = () => {
+      fetchTabs();
+    };
+
+    // Listen for tab updates (URL change, title change, favicon change)
+    const handleTabUpdated = (
+      _tabId: number,
+      changeInfo: { title?: string; url?: string; favIconUrl?: string }
+    ) => {
+      // Only refetch if meaningful properties changed
+      if (changeInfo.title || changeInfo.url || changeInfo.favIconUrl) {
+        fetchTabs();
+      }
+    };
+
+    // Add event listeners
+    chrome.tabs.onCreated.addListener(handleTabCreated);
+    chrome.tabs.onRemoved.addListener(handleTabRemoved);
+    chrome.tabs.onUpdated.addListener(handleTabUpdated);
+
+    // Cleanup listeners on unmount
+    return () => {
+      chrome.tabs.onCreated.removeListener(handleTabCreated);
+      chrome.tabs.onRemoved.removeListener(handleTabRemoved);
+      chrome.tabs.onUpdated.removeListener(handleTabUpdated);
+    };
+  }, [fetchTabs]);
 
   useEffect(() => {
     chrome.storage.local.get(
