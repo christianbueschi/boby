@@ -1,32 +1,30 @@
-import { Button, HStack, Image, Text } from '@chakra-ui/react';
 import { useCollections } from '../context/CollectionsContext';
 import { PiExportLight } from 'react-icons/pi';
+import { Button } from '@/components/ui/button';
 
 export const Footer: React.FC = () => {
   const { exportCollections, importCollections } = useCollections();
 
   return (
-    <HStack bg='gray.900' w='100%' gap={12} p={4}>
-      <HStack gap={2}>
-        <Image
-          src='/favicon.png'
-          alt='Boby'
-          width={8}
-          height={8}
-          borderRadius='md'
+    <div className="flex items-center bg-gray-900 w-full gap-12 p-4">
+      <div className="flex items-center gap-2">
+        <img
+          src="/favicon.png"
+          alt="Boby"
+          className="w-8 h-8 rounded-md"
         />
-        <Text>Boby - the better Toby</Text>
-      </HStack>
+        <span className="text-gray-100">Boby - the better Toby</span>
+      </div>
 
-      <HStack gap={2}>
-        <Button onClick={exportCollections} size='xs' variant='ghost'>
+      <div className="flex items-center gap-2">
+        <Button onClick={exportCollections} size="xs" variant="ghost">
           <PiExportLight />
           Export Collections
         </Button>
-        <Button onClick={importCollections} size='xs' variant='ghost'>
+        <Button onClick={importCollections} size="xs" variant="ghost">
           Import Collections
         </Button>
-      </HStack>
-    </HStack>
+      </div>
+    </div>
   );
 };

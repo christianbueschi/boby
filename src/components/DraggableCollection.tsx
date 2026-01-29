@@ -2,7 +2,6 @@ import { CSS } from '@dnd-kit/utilities';
 import { useSortable } from '@dnd-kit/sortable';
 import { Collection } from '../context/CollectionsContext';
 import { DroppableCollection } from './DroppableCollection';
-import { Box } from '@chakra-ui/react';
 
 type DraggableCollectionProps = {
   collection: Collection;
@@ -17,18 +16,13 @@ export const DraggableCollection: React.FC<DraggableCollectionProps> = ({
     useSortable({ id: collection.id });
 
   return (
-    <Box
+    <div
       ref={setNodeRef}
       style={{
         transform: CSS.Transform.toString(transform),
         transition,
       }}
-      position='relative'
-      _hover={{
-        '& > .drag-handle': {
-          opacity: 1,
-        },
-      }}
+      className="relative group"
     >
       <DroppableCollection
         name={collection.name}
@@ -37,6 +31,6 @@ export const DraggableCollection: React.FC<DraggableCollectionProps> = ({
         isDragOver={isDragOver}
         dragHandleProps={{ ...attributes, ...listeners }}
       />
-    </Box>
+    </div>
   );
 };

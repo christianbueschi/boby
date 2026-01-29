@@ -1,11 +1,3 @@
-import {
-  Accordion,
-  Heading,
-  HStack,
-  IconButton,
-  SimpleGrid,
-  VStack,
-} from '@chakra-ui/react';
 import { useDroppable } from '@dnd-kit/core';
 import { CardType, useCollections } from '../context/CollectionsContext';
 import { PiTrashLight, PiArrowsOutCardinal } from 'react-icons/pi';
@@ -15,6 +7,9 @@ import {
   SortableContext,
   verticalListSortingStrategy,
 } from '@dnd-kit/sortable';
+import { AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 type DroppableCollectionProps = {
   name: string;
@@ -31,7 +26,6 @@ export const DroppableCollection: React.FC<DroppableCollectionProps> = ({
   isDragOver,
   dragHandleProps,
 }) => {
-  console.log('🚀 ~ dragHandleProps:', dragHandleProps);
   const { setNodeRef } = useDroppable({
     id,
   });
@@ -39,63 +33,56 @@ export const DroppableCollection: React.FC<DroppableCollectionProps> = ({
   const { removeCollection } = useCollections();
 
   return (
-    <Accordion.Item
+    <AccordionItem
       value={id}
       ref={setNodeRef}
-      _hover={{
-        '& .edit-buttons': {
-          display: 'flex',
-        },
-      }}
-      p={2}
-      outline={isDragOver ? '2px solid' : ''}
-      outlineColor={isDragOver ? 'purple.500' : ''}
+      className={cn(
+        'p-2 group/collection border-gray-700',
+        isDragOver && 'outline outline-2 outline-purple-500'
+      )}
     >
-      <HStack justifyContent='space-between' alignItems='center'>
-        <Accordion.ItemTrigger w='auto'>
-          <Heading color='gray.100'>{name}</Heading>
-          <Accordion.ItemIndicator />
-        </Accordion.ItemTrigger>
+      <div className="flex justify-between items-center">
+        <AccordionTrigger className="w-auto hover:no-underline">
+          <h3 className="text-gray-100 font-bold">{name}</h3>
+        </AccordionTrigger>
 
-        <HStack display='none' className='edit-buttons'>
-          <IconButton
-            size='2xs'
+        <div className="hidden group-hover/collection:flex gap-1">
+          <Button
+            size="icon-xs"
             onClick={() => removeCollection(id)}
-            variant='ghost'
-            aria-label='Remove collection'
+            variant="ghost"
+            aria-label="Remove collection"
           >
             <PiTrashLight />
-          </IconButton>
+          </Button>
           {dragHandleProps && (
-            <IconButton
-              size='2xs'
-              variant='ghost'
-              cursor='grab'
-              aria-label='Drag collection'
+            <Button
+              size="icon-xs"
+              variant="ghost"
+              className="cursor-grab"
+              aria-label="Drag collection"
               {...dragHandleProps}
             >
               <PiArrowsOutCardinal />
-            </IconButton>
+            </Button>
           )}
-        </HStack>
-      </HStack>
+        </div>
+      </div>
 
-      <Accordion.ItemContent overflow='visible'>
-        <Accordion.ItemBody>
-          <VStack alignItems='initial' gap={4}>
-            <SortableContext
-              items={cards.map((c) => c.id)}
-              strategy={verticalListSortingStrategy}
-            >
-              <SimpleGrid columns={{ base: 2, md: 4 }} gap={4}>
-                {cards?.map((card) => (
-                  <DraggableCard key={card.id} card={card} collectionId={id} />
-                ))}
-              </SimpleGrid>
-            </SortableContext>
-          </VStack>
-        </Accordion.ItemBody>
-      </Accordion.ItemContent>
-    </Accordion.Item>
+      <AccordionContent className="overflow-visible">
+        <div className="flex flex-col items-start gap-4">
+          <SortableContext
+            items={cards.map((c) => c.id)}
+            strategy={verticalListSortingStrategy}
+          >
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
+              {cards?.map((card) => (
+                <DraggableCard key={card.id} card={card} collectionId={id} />
+              ))}
+            </div>
+          </SortableContext>
+        </div>
+      </AccordionContent>
+    </AccordionItem>
   );
 };

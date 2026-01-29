@@ -5,15 +5,6 @@ import {
   DragOverlay,
   DragStartEvent,
 } from '@dnd-kit/core';
-import {
-  Accordion,
-  Box,
-  Grid,
-  GridItem,
-  Heading,
-  HStack,
-  VStack,
-} from '@chakra-ui/react';
 import { DraggableTab } from './components/DraggableTab';
 import {
   CardType,
@@ -31,6 +22,7 @@ import {
   verticalListSortingStrategy,
 } from '@dnd-kit/sortable';
 import { DraggableCollection } from './components/DraggableCollection';
+import { Accordion } from '@/components/ui/accordion';
 
 export default function App() {
   const {
@@ -82,7 +74,6 @@ export default function App() {
     let sourceCollectionIndex = -1;
     let targetCollectionIndex = -1;
     let sourceCardIndex = -1;
-    // let targetCardIndex = -1;
 
     collections.forEach((collection, colIndex) => {
       const activeCardIndex = collection.cards.findIndex(
@@ -261,33 +252,28 @@ export default function App() {
   };
 
   return (
-    <Box minH='100vh' bg='gray.800'>
-      <Grid gridTemplateRows='auto 1fr auto' minHeight='100vh'>
-        <GridItem></GridItem>
-        <GridItem>
+    <div className="min-h-screen bg-gray-800">
+      <div className="grid grid-rows-[auto_1fr_auto] min-h-screen">
+        <div></div>
+        <div>
           <DndContext
             onDragStart={handleDragStart}
             onDragEnd={handleDragEnd}
             onDragOver={handleDragOver}
           >
-            <HStack gap={4} w='100%' alignItems='initial' h='100%'>
-              <VStack flex={5} alignItems='initial' p={6} gap={8}>
-                <HStack
-                  gap={4}
-                  p={2}
-                  alignItems='center'
-                  justifyContent='space-between'
-                >
-                  <Heading as='h1' color='gray.400' size='md'>
+            <div className="flex gap-4 w-full items-start h-full">
+              <div className="flex-[5] flex flex-col items-start p-6 gap-8">
+                <div className="flex gap-4 p-2 items-center justify-between w-full">
+                  <h1 className="text-gray-400 text-lg font-bold">
                     Collections
-                  </Heading>
+                  </h1>
                   <AddCollection />
-                </HStack>
-                <Accordion.Root
-                  collapsible
+                </div>
+                <Accordion
+                  type="multiple"
                   value={openCollections}
-                  onValueChange={(e) => saveOpenCollections(e.value)}
-                  multiple
+                  onValueChange={(value) => saveOpenCollections(value)}
+                  className="w-full"
                 >
                   <SortableContext
                     items={collections.map((c) => c.id)}
@@ -301,44 +287,37 @@ export default function App() {
                       />
                     ))}
                   </SortableContext>
-                </Accordion.Root>
-              </VStack>
+                </Accordion>
+              </div>
 
-              <VStack flex={1} alignItems='start' bg='gray.900' p={8} gap={8}>
-                <Heading color='gray.400' size='md'>
+              <div className="flex-1 flex flex-col items-start bg-gray-900 p-8 gap-8">
+                <h2 className="text-gray-400 text-lg font-bold">
                   Open Tabs
-                </Heading>
-                <VStack alignItems='start'>
+                </h2>
+                <div className="flex flex-col items-start gap-2">
                   {tabs.map((tab) => (
                     <DraggableTab key={tab.title} tab={tab} />
                   ))}
-                </VStack>
-              </VStack>
-            </HStack>
+                </div>
+              </div>
+            </div>
             <DragOverlay>
               {activeCard ? (
                 <Card title={activeCard.title} favicon={activeCard.favicon} />
               ) : activeCollection ? (
-                <Box
-                  p={4}
-                  bg='gray.700'
-                  borderRadius='md'
-                  boxShadow='lg'
-                  opacity={0.8}
-                  minWidth='200px'
-                >
-                  <Heading size='md' color='gray.100'>
+                <div className="p-4 bg-gray-700 rounded-md shadow-lg opacity-80 min-w-[200px]">
+                  <h3 className="text-lg font-bold text-gray-100">
                     {activeCollection.name}
-                  </Heading>
-                </Box>
+                  </h3>
+                </div>
               ) : null}
             </DragOverlay>
           </DndContext>
-        </GridItem>
-        <GridItem>
+        </div>
+        <div>
           <Footer />
-        </GridItem>
-      </Grid>
-    </Box>
+        </div>
+      </div>
+    </div>
   );
 }

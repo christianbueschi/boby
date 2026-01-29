@@ -1,4 +1,4 @@
-import { Heading, HStack, Image, VStack } from '@chakra-ui/react';
+import { cn } from '@/lib/utils';
 
 type CardProps = {
   favicon?: string;
@@ -8,28 +8,29 @@ type CardProps = {
 
 export const Card: React.FC<CardProps> = ({ favicon, title, small }) => {
   return (
-    <VStack
-      alignItems='initial'
-      justifyContent='center'
-      h={small ? '40px' : '80px'}
-      bg='gray.700'
-      p={small ? 2 : 4}
-      borderRadius='xl'
+    <div
+      className={cn(
+        'flex flex-col items-start justify-center bg-gray-700 rounded-xl',
+        small ? 'h-[40px] p-2' : 'h-[80px] p-4'
+      )}
     >
-      <HStack gap={small ? 2 : 4}>
+      <div className={cn('flex items-center', small ? 'gap-2' : 'gap-4')}>
         {favicon && (
-          <Image
+          <img
             src={favicon}
             alt={title}
-            width={small ? 4 : 6}
-            height={small ? 4 : 6}
+            className={cn(small ? 'w-4 h-4' : 'w-6 h-6')}
           />
         )}
-
-        <Heading size='sm' lineClamp={small ? 1 : 2}>
+        <h4
+          className={cn(
+            'text-sm font-bold text-gray-100',
+            small ? 'line-clamp-1' : 'line-clamp-2'
+          )}
+        >
           {title}
-        </Heading>
-      </HStack>
-    </VStack>
+        </h4>
+      </div>
+    </div>
   );
 };

@@ -1,6 +1,5 @@
 import { useDraggable } from '@dnd-kit/core';
 import { TabType } from '../context/CollectionsContext';
-import { Box } from '@chakra-ui/react';
 import { Card } from './Card';
 
 export const DraggableTab = ({ tab }: { tab: TabType }) => {
@@ -9,31 +8,22 @@ export const DraggableTab = ({ tab }: { tab: TabType }) => {
   });
 
   return (
-    <Box
+    <div
       ref={setNodeRef}
       {...listeners}
       {...attributes}
-      cursor='grab'
-      transform={
-        transform ? `translate(${transform.x}px, ${transform.y}px)` : undefined
-      }
+      className="cursor-grab"
+      style={{
+        transform: transform
+          ? `translate(${transform.x}px, ${transform.y}px)`
+          : undefined,
+      }}
     >
-      <Box
-        position='relative'
-        transform='scale(1)'
-        transition='transform 0.3s ease-in-out'
-        _hover={{
-          transform: 'scale(1.02)',
-
-          '& button': {
-            display: 'flex',
-          },
-        }}
-      >
-        <Box>
+      <div className="relative transition-transform duration-300 ease-in-out hover:scale-[1.02]">
+        <div>
           <Card favicon={tab.favIconUrl} title={tab.title} small />
-        </Box>
-      </Box>
-    </Box>
+        </div>
+      </div>
+    </div>
   );
 };

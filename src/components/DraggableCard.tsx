@@ -1,17 +1,6 @@
 import { CSS } from '@dnd-kit/utilities';
 import { CardType, useCollections } from '../context/CollectionsContext';
 import {
-  Box,
-  Button,
-  CloseButton,
-  Dialog,
-  Field,
-  HStack,
-  IconButton,
-  Input,
-  Portal,
-} from '@chakra-ui/react';
-import {
   PiArrowsOutCardinal,
   PiNotePencilLight,
   PiTrashLight,
@@ -19,6 +8,18 @@ import {
 import { Card } from './Card';
 import { useSortable } from '@dnd-kit/sortable';
 import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogFooter,
+  DialogTrigger,
+  DialogClose,
+} from '@/components/ui/dialog';
 
 type DraggableCardProps = {
   card: CardType;
@@ -34,7 +35,8 @@ export const DraggableCard: React.FC<DraggableCardProps> = ({
 
   const { removeCard, saveCollections, collections } = useCollections();
 
-  const [editCartTitle, setEditCartTitle] = useState<string>();
+  const [editCartTitle, setEditCartTitle] = useState<string>('');
+  const [isEditOpen, setIsEditOpen] = useState(false);
 
   const handleSave = () => {
     const foundCollection = collections.find((c) => c.id === collectionId);
@@ -54,10 +56,16 @@ export const DraggableCard: React.FC<DraggableCardProps> = ({
 
     saveCollections(newCollection);
     setEditCartTitle('');
+    setIsEditOpen(false);
+  };
+
+  const handleOpenEdit = () => {
+    setEditCartTitle(card.title);
+    setIsEditOpen(true);
   };
 
   return (
-    <Box
+    <div
       ref={setNodeRef}
       style={{
         transform: CSS.Transform.toString(transform),
@@ -65,88 +73,62 @@ export const DraggableCard: React.FC<DraggableCardProps> = ({
         cursor: 'grab',
       }}
     >
-      <Box
-        position='relative'
-        transform='scale(1)'
-        transition='transform 0.3s ease-in-out'
-        _hover={{
-          transform: 'scale(1.02)',
-
-          '& div': {
-            display: 'flex',
-          },
-        }}
-      >
-        <a href={card.url} target='_blank'>
+      <div className="relative group transition-transform duration-300 ease-in-out hover:scale-[1.02]">
+        <a href={card.url} target="_blank" rel="noopener noreferrer">
           <Card favicon={card.favicon} title={card.title} />
         </a>
         {collectionId && (
-          <HStack position='absolute' top={1} right={1} display='none'>
-            <IconButton
-              size='2xs'
-              variant='ghost'
+          <div className="absolute top-1 right-1 hidden group-hover:flex gap-1">
+            <Button
+              size="icon-xs"
+              variant="ghost"
               onClick={() => removeCard(card.id, collectionId)}
             >
               <PiTrashLight />
-            </IconButton>
-            <Dialog.Root
-              size='md'
-              onOpenChange={() => setEditCartTitle(card.title)}
-              open={!!editCartTitle}
-            >
-              <Dialog.Trigger asChild>
-                <IconButton size='2xs' variant='ghost'>
+            </Button>
+            <Dialog open={isEditOpen} onOpenChange={setIsEditOpen}>
+              <DialogTrigger asChild>
+                <Button size="icon-xs" variant="ghost" onClick={handleOpenEdit}>
                   <PiNotePencilLight />
-                </IconButton>
-              </Dialog.Trigger>
-              <Portal>
-                <Dialog.Backdrop />
-                <Dialog.Positioner>
-                  <Dialog.Content>
-                    <Dialog.Header>
-                      <Dialog.Title>Edit Card</Dialog.Title>
-                    </Dialog.Header>
-                    <Dialog.Body>
-                      <Field.Root>
-                        <Field.Label>
-                          Title
-                          <Field.RequiredIndicator />
-                        </Field.Label>
-                        <Input
-                          type='email'
-                          value={editCartTitle}
-                          onInput={(ev) =>
-                            setEditCartTitle(ev.currentTarget.value)
-                          }
-                        />
-                      </Field.Root>
-                    </Dialog.Body>
-                    <Dialog.Footer>
-                      <Dialog.ActionTrigger asChild>
-                        <Button variant='outline'>Cancel</Button>
-                      </Dialog.ActionTrigger>
-                      <Button onClick={handleSave}>Save</Button>
-                    </Dialog.Footer>
-                    <Dialog.CloseTrigger asChild>
-                      <CloseButton size='sm' />
-                    </Dialog.CloseTrigger>
-                  </Dialog.Content>
-                </Dialog.Positioner>
-              </Portal>
-            </Dialog.Root>
+                </Button>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Edit Card</DialogTitle>
+                </DialogHeader>
+                <div className="py-4">
+                  <Label htmlFor="title">
+                    Title <span className="text-red-500">*</span>
+                  </Label>
+                  <Input
+                    id="title"
+                    type="text"
+                    value={editCartTitle}
+                    onChange={(ev) => setEditCartTitle(ev.target.value)}
+                    className="mt-2"
+                  />
+                </div>
+                <DialogFooter>
+                  <DialogClose asChild>
+                    <Button variant="outline">Cancel</Button>
+                  </DialogClose>
+                  <Button onClick={handleSave}>Save</Button>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
 
-            <IconButton
-              cursor='grab'
+            <Button
+              size="icon-xs"
+              variant="ghost"
+              className="cursor-grab"
               {...listeners}
               {...attributes}
-              size='2xs'
-              variant='ghost'
             >
               <PiArrowsOutCardinal />
-            </IconButton>
-          </HStack>
+            </Button>
+          </div>
         )}
-      </Box>
-    </Box>
+      </div>
+    </div>
   );
 };
