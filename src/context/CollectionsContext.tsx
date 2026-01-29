@@ -75,15 +75,21 @@ export const CollectionsProvider: React.FC<CollectionsProviderProps> = ({
   }, []);
 
   useEffect(() => {
-    chrome.storage.local.get('collections', (data) => {
-      setCollections(data.collections || []);
-    });
+    chrome.storage.local.get(
+      'collections',
+      (data: { collections: Collection[] }) => {
+        setCollections(data.collections || []);
+      }
+    );
   }, []);
 
   useEffect(() => {
-    chrome.storage.local.get('openCollections', (data) => {
-      setOpenCollections(data.openCollections || []);
-    });
+    chrome.storage.local.get(
+      'openCollections',
+      (data: { openCollections: string[] }) => {
+        setOpenCollections(data.openCollections || []);
+      }
+    );
   }, []);
 
   const addCollection = (name: string) => {
