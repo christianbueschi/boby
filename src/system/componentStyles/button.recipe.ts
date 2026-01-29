@@ -19,7 +19,7 @@ export const buttonRecipe = defineRecipe({
       solid: {
         ...COMMON_VARIANT_PROPS,
         color: 'white',
-        bg: 'gray.950',
+        bg: 'purple.500',
         _hover: {
           bg: 'orchid.500',
           _disabled: {
@@ -61,7 +61,7 @@ export const buttonRecipe = defineRecipe({
         bg: 'transparent',
         borderWidth: '1px',
         borderStyle: 'solid',
-        borderColor: 'gray.950',
+        borderColor: 'purple.950',
         _hover: {
           color: 'white',
           borderColor: 'gray.950',

@@ -40,7 +40,7 @@ export const AddCollection: React.FC = () => {
             </Dialog.Body>
             <Dialog.Footer>
               <Dialog.ActionTrigger asChild>
-                <Button variant='outline'>Cancel</Button>
+                <Button variant='subtle'>Cancel</Button>
               </Dialog.ActionTrigger>
               <Button onClick={handleAddCollection}>Save</Button>
             </Dialog.Footer>

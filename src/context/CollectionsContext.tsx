@@ -88,7 +88,7 @@ export const CollectionsProvider: React.FC<CollectionsProviderProps> = ({
 
   const addCollection = (name: string) => {
     const id = generateUUID();
-    const newCollections = [...collections, { name, id, cards: [] }];
+    const newCollections = [{ name, id, cards: [] }, ...collections];
     saveCollections(newCollections);
   };
 

@@ -31,7 +31,6 @@ export const DroppableCollection: React.FC<DroppableCollectionProps> = ({
   isDragOver,
   dragHandleProps,
 }) => {
-  console.log('🚀 ~ dragHandleProps:', dragHandleProps);
   const { setNodeRef } = useDroppable({
     id,
   });
@@ -52,7 +51,7 @@ export const DroppableCollection: React.FC<DroppableCollectionProps> = ({
       outlineColor={isDragOver ? 'purple.500' : ''}
     >
       <HStack justifyContent='space-between' alignItems='center'>
-        <Accordion.ItemTrigger w='auto'>
+        <Accordion.ItemTrigger w='auto' cursor='pointer'>
           <Heading color='gray.100'>{name}</Heading>
           <Accordion.ItemIndicator />
         </Accordion.ItemTrigger>
