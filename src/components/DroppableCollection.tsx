@@ -125,6 +125,9 @@ export const DroppableCollection: React.FC<DroppableCollectionProps> = ({
                         onInput={(ev) =>
                           setEditCollectionName(ev.currentTarget.value)
                         }
+                        onKeyDown={(ev) => {
+                          if (ev.key === 'Enter') handleSave();
+                        }}
                       />
                     </Field.Root>
                   </Dialog.Body>

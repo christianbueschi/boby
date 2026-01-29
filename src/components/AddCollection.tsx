@@ -35,6 +35,9 @@ export const AddCollection: React.FC = () => {
                 onInput={(ev: React.FormEvent<HTMLInputElement>) =>
                   setName(ev.currentTarget.value)
                 }
+                onKeyDown={(ev) => {
+                  if (ev.key === 'Enter') handleAddCollection();
+                }}
                 placeholder='Collection Name'
               />
             </Dialog.Body>

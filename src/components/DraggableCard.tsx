@@ -115,11 +115,14 @@ export const DraggableCard: React.FC<DraggableCardProps> = ({
                           <Field.RequiredIndicator />
                         </Field.Label>
                         <Input
-                          type='email'
+                          type='text'
                           value={editCartTitle}
                           onInput={(ev) =>
                             setEditCartTitle(ev.currentTarget.value)
                           }
+                          onKeyDown={(ev) => {
+                            if (ev.key === 'Enter') handleSave();
+                          }}
                         />
                       </Field.Root>
                     </Dialog.Body>
