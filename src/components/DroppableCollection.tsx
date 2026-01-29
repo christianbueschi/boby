@@ -92,7 +92,9 @@ export const DroppableCollection: React.FC<DroppableCollectionProps> = ({
           </IconButton>
           <Dialog.Root
             size='md'
-            onOpenChange={() => setEditCollectionName(name)}
+            onOpenChange={(details) =>
+              setEditCollectionName(details.open ? name : undefined)
+            }
             open={!!editCollectionName}
           >
             <Dialog.Trigger asChild>

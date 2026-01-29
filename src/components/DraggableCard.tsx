@@ -91,7 +91,9 @@ export const DraggableCard: React.FC<DraggableCardProps> = ({
             </IconButton>
             <Dialog.Root
               size='md'
-              onOpenChange={() => setEditCartTitle(card.title)}
+              onOpenChange={(details) =>
+                setEditCartTitle(details.open ? card.title : undefined)
+              }
               open={!!editCartTitle}
             >
               <Dialog.Trigger asChild>
