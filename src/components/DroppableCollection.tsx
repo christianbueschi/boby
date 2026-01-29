@@ -1,15 +1,25 @@
 import {
   Accordion,
+  Button,
+  CloseButton,
+  Dialog,
+  Field,
   Heading,
   HStack,
   IconButton,
+  Input,
+  Portal,
   SimpleGrid,
   VStack,
 } from '@chakra-ui/react';
 import { useDroppable } from '@dnd-kit/core';
 import { CardType, useCollections } from '../context/CollectionsContext';
-import { PiTrashLight, PiArrowsOutCardinal } from 'react-icons/pi';
-import React from 'react';
+import {
+  PiTrashLight,
+  PiArrowsOutCardinal,
+  PiNotePencilLight,
+} from 'react-icons/pi';
+import React, { useState } from 'react';
 import { DraggableCard } from './DraggableCard';
 import {
   SortableContext,
@@ -36,7 +46,22 @@ export const DroppableCollection: React.FC<DroppableCollectionProps> = ({
     id,
   });
 
-  const { removeCollection } = useCollections();
+  const { removeCollection, saveCollections, collections } = useCollections();
+
+  const [editCollectionName, setEditCollectionName] = useState<string>();
+
+  const handleSave = () => {
+    if (!editCollectionName) return;
+
+    const newCollections = collections.map((collection) =>
+      collection.id === id
+        ? { ...collection, name: editCollectionName }
+        : collection
+    );
+
+    saveCollections(newCollections);
+    setEditCollectionName('');
+  };
 
   return (
     <Accordion.Item
@@ -66,6 +91,55 @@ export const DroppableCollection: React.FC<DroppableCollectionProps> = ({
           >
             <PiTrashLight />
           </IconButton>
+          <Dialog.Root
+            size='md'
+            onOpenChange={() => setEditCollectionName(name)}
+            open={!!editCollectionName}
+          >
+            <Dialog.Trigger asChild>
+              <IconButton
+                size='2xs'
+                variant='ghost'
+                aria-label='Edit collection'
+              >
+                <PiNotePencilLight />
+              </IconButton>
+            </Dialog.Trigger>
+            <Portal>
+              <Dialog.Backdrop />
+              <Dialog.Positioner>
+                <Dialog.Content>
+                  <Dialog.Header>
+                    <Dialog.Title>Edit Collection</Dialog.Title>
+                  </Dialog.Header>
+                  <Dialog.Body>
+                    <Field.Root>
+                      <Field.Label>
+                        Name
+                        <Field.RequiredIndicator />
+                      </Field.Label>
+                      <Input
+                        type='text'
+                        value={editCollectionName}
+                        onInput={(ev) =>
+                          setEditCollectionName(ev.currentTarget.value)
+                        }
+                      />
+                    </Field.Root>
+                  </Dialog.Body>
+                  <Dialog.Footer>
+                    <Dialog.ActionTrigger asChild>
+                      <Button variant='outline'>Cancel</Button>
+                    </Dialog.ActionTrigger>
+                    <Button onClick={handleSave}>Save</Button>
+                  </Dialog.Footer>
+                  <Dialog.CloseTrigger asChild>
+                    <CloseButton size='sm' />
+                  </Dialog.CloseTrigger>
+                </Dialog.Content>
+              </Dialog.Positioner>
+            </Portal>
+          </Dialog.Root>
           {dragHandleProps && (
             <IconButton
               size='2xs'
