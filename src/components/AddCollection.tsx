@@ -1,6 +1,7 @@
 import { Button, CloseButton, Dialog, Input, Portal } from '@chakra-ui/react';
 import { useState } from 'react';
 import { useCollections } from '../context/CollectionsContext';
+import { t } from '../i18n/t';
 
 export const AddCollection: React.FC = () => {
   const { addCollection } = useCollections();
@@ -20,14 +21,14 @@ export const AddCollection: React.FC = () => {
   return (
     <Dialog.Root open={open} onOpenChange={() => setOpen(!open)}>
       <Dialog.Trigger asChild>
-        <Button variant='ghost'>+ Add Collection</Button>
+        <Button variant='ghost'>{t('addCollection.trigger')}</Button>
       </Dialog.Trigger>
       <Portal>
         <Dialog.Backdrop />
         <Dialog.Positioner>
           <Dialog.Content>
             <Dialog.Header>
-              <Dialog.Title>New Collection</Dialog.Title>
+              <Dialog.Title>{t('addCollection.title')}</Dialog.Title>
             </Dialog.Header>
             <Dialog.Body>
               <Input
@@ -38,14 +39,14 @@ export const AddCollection: React.FC = () => {
                 onKeyDown={(ev) => {
                   if (ev.key === 'Enter') handleAddCollection();
                 }}
-                placeholder='Collection Name'
+                placeholder={t('addCollection.namePlaceholder')}
               />
             </Dialog.Body>
             <Dialog.Footer>
               <Dialog.ActionTrigger asChild>
-                <Button variant='subtle'>Cancel</Button>
+                <Button variant='subtle'>{t('common.cancel')}</Button>
               </Dialog.ActionTrigger>
-              <Button onClick={handleAddCollection}>Save</Button>
+              <Button onClick={handleAddCollection}>{t('common.save')}</Button>
             </Dialog.Footer>
             <Dialog.CloseTrigger asChild>
               <CloseButton size='sm' />

@@ -1,0 +1,36 @@
+{
+  "app": {
+    "collections": "Collections",
+    "openTabs": "Open Tabs"
+  },
+  "addCollection": {
+    "trigger": "+ Add Collection",
+    "title": "New Collection",
+    "namePlaceholder": "Collection Name"
+  },
+  "common": {
+    "cancel": "Cancel",
+    "save": "Save"
+  },
+  "editCard": {
+    "title": "Edit Card",
+    "titleLabel": "Title"
+  },
+  "editCollection": {
+    "title": "Edit Collection",
+    "nameLabel": "Name",
+    "removeAriaLabel": "Remove collection",
+    "editAriaLabel": "Edit collection",
+    "dragAriaLabel": "Drag collection"
+  },
+  "footer": {
+    "brand": "Boby",
+    "logoAlt": "Boby",
+    "export": "Export Collections",
+    "import": "Import Collections"
+  },
+  "tabs": {
+    "noTitle": "No Title",
+    "noUrl": "No URL"
+  }
+}

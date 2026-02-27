@@ -1,6 +1,7 @@
 import { Button, HStack, Image, Text } from '@chakra-ui/react';
 import { useCollections } from '../context/CollectionsContext';
 import { PiExportLight } from 'react-icons/pi';
+import { t } from '../i18n/t';
 
 export const Footer: React.FC = () => {
   const { exportCollections, importCollections } = useCollections();
@@ -10,21 +11,21 @@ export const Footer: React.FC = () => {
       <HStack gap={2}>
         <Image
           src='/favicon.png'
-          alt='Boby'
+          alt={t('footer.logoAlt')}
           width={8}
           height={8}
           borderRadius='md'
         />
-        <Text>Boby - the better Toby</Text>
+        <Text>{t('footer.brand')}</Text>
       </HStack>
 
       <HStack gap={2}>
         <Button onClick={exportCollections} size='xs' variant='ghost'>
           <PiExportLight />
-          Export Collections
+          {t('footer.export')}
         </Button>
         <Button onClick={importCollections} size='xs' variant='ghost'>
-          Import Collections
+          {t('footer.import')}
         </Button>
       </HStack>
     </HStack>

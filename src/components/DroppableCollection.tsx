@@ -21,6 +21,7 @@ import {
 } from 'react-icons/pi';
 import React, { useState } from 'react';
 import { DraggableCard } from './DraggableCard';
+import { t } from '../i18n/t';
 import {
   SortableContext,
   verticalListSortingStrategy,
@@ -86,7 +87,7 @@ export const DroppableCollection: React.FC<DroppableCollectionProps> = ({
             size='2xs'
             onClick={() => removeCollection(id)}
             variant='ghost'
-            aria-label='Remove collection'
+            aria-label={t('editCollection.removeAriaLabel')}
           >
             <PiTrashLight />
           </IconButton>
@@ -101,7 +102,7 @@ export const DroppableCollection: React.FC<DroppableCollectionProps> = ({
               <IconButton
                 size='2xs'
                 variant='ghost'
-                aria-label='Edit collection'
+                aria-label={t('editCollection.editAriaLabel')}
               >
                 <PiNotePencilLight />
               </IconButton>
@@ -111,12 +112,12 @@ export const DroppableCollection: React.FC<DroppableCollectionProps> = ({
               <Dialog.Positioner>
                 <Dialog.Content>
                   <Dialog.Header>
-                    <Dialog.Title>Edit Collection</Dialog.Title>
+                    <Dialog.Title>{t('editCollection.title')}</Dialog.Title>
                   </Dialog.Header>
                   <Dialog.Body>
                     <Field.Root>
                       <Field.Label>
-                        Name
+                        {t('editCollection.nameLabel')}
                         <Field.RequiredIndicator />
                       </Field.Label>
                       <Input
@@ -133,9 +134,9 @@ export const DroppableCollection: React.FC<DroppableCollectionProps> = ({
                   </Dialog.Body>
                   <Dialog.Footer>
                     <Dialog.ActionTrigger asChild>
-                      <Button variant='outline'>Cancel</Button>
+                      <Button variant='outline'>{t('common.cancel')}</Button>
                     </Dialog.ActionTrigger>
-                    <Button onClick={handleSave}>Save</Button>
+                    <Button onClick={handleSave}>{t('common.save')}</Button>
                   </Dialog.Footer>
                   <Dialog.CloseTrigger asChild>
                     <CloseButton size='sm' />
@@ -149,7 +150,7 @@ export const DroppableCollection: React.FC<DroppableCollectionProps> = ({
               size='2xs'
               variant='ghost'
               cursor='grab'
-              aria-label='Drag collection'
+              aria-label={t('editCollection.dragAriaLabel')}
               {...dragHandleProps}
             >
               <PiArrowsOutCardinal />

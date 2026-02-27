@@ -6,6 +6,7 @@ import {
   useState,
 } from 'react';
 import { generateUUID } from '../utils/uuid';
+import { t } from '../i18n/t';
 
 export type Collection = {
   id: string;
@@ -72,8 +73,8 @@ export const CollectionsProvider: React.FC<CollectionsProviderProps> = ({
     chrome.tabs.query({}, (openTabs) => {
       const formattedTabs = openTabs.map((tab) => ({
         id: tab.id!,
-        title: tab.title || 'No Title',
-        url: tab.url || 'No URL',
+        title: tab.title || t('tabs.noTitle'),
+        url: tab.url || t('tabs.noUrl'),
         favIconUrl: tab.favIconUrl || '',
       }));
       setTabs(formattedTabs);

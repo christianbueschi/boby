@@ -19,6 +19,7 @@ import {
 import { Card } from './Card';
 import { useSortable } from '@dnd-kit/sortable';
 import { useState } from 'react';
+import { t } from '../i18n/t';
 
 type DraggableCardProps = {
   card: CardType;
@@ -106,12 +107,12 @@ export const DraggableCard: React.FC<DraggableCardProps> = ({
                 <Dialog.Positioner>
                   <Dialog.Content>
                     <Dialog.Header>
-                      <Dialog.Title>Edit Card</Dialog.Title>
+                      <Dialog.Title>{t('editCard.title')}</Dialog.Title>
                     </Dialog.Header>
                     <Dialog.Body>
                       <Field.Root>
                         <Field.Label>
-                          Title
+                          {t('editCard.titleLabel')}
                           <Field.RequiredIndicator />
                         </Field.Label>
                         <Input
@@ -128,9 +129,9 @@ export const DraggableCard: React.FC<DraggableCardProps> = ({
                     </Dialog.Body>
                     <Dialog.Footer>
                       <Dialog.ActionTrigger asChild>
-                        <Button variant='outline'>Cancel</Button>
+                        <Button variant='outline'>{t('common.cancel')}</Button>
                       </Dialog.ActionTrigger>
-                      <Button onClick={handleSave}>Save</Button>
+                      <Button onClick={handleSave}>{t('common.save')}</Button>
                     </Dialog.Footer>
                     <Dialog.CloseTrigger asChild>
                       <CloseButton size='sm' />

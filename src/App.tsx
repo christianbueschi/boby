@@ -31,6 +31,7 @@ import {
   verticalListSortingStrategy,
 } from '@dnd-kit/sortable';
 import { DraggableCollection } from './components/DraggableCollection';
+import { t } from './i18n/t';
 
 export default function App() {
   const {
@@ -279,7 +280,7 @@ export default function App() {
                   justifyContent='space-between'
                 >
                   <Heading as='h1' color='gray.400' size='md'>
-                    Collections
+                    {t('app.collections')}
                   </Heading>
                   <AddCollection />
                 </HStack>
@@ -306,7 +307,7 @@ export default function App() {
 
               <VStack flex={1} alignItems='start' bg='gray.900' p={8} gap={8}>
                 <Heading color='gray.400' size='md'>
-                  Open Tabs
+                  {t('app.openTabs')}
                 </Heading>
                 <VStack alignItems='start'>
                   {tabs.map((tab) => (
